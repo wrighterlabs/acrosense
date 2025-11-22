@@ -6,7 +6,7 @@
 
 ## 🚀 Quick Start
 
-1. Install from the VS Code Marketplace (once published).
+1. Install from the VS Code Marketplace.
 2. Add an `acros.json` file at your project root:
    ```json
    {
@@ -42,6 +42,7 @@ Only one configuration type should exist per directory level. If multiple are fo
 The simplest way to define acronyms. Place an `acros.json` file at your project root or in any subdirectory.
 
 **Simple string format:**
+
 ```json
 {
   "api": "Application Programming Interface",
@@ -51,6 +52,7 @@ The simplest way to define acronyms. Place an `acros.json` file at your project 
 ```
 
 **Object format with optional fields:**
+
 ```json
 {
   "api": {
@@ -68,30 +70,33 @@ The simplest way to define acronyms. Place an `acros.json` file at your project 
 Use JavaScript when you need dynamic acronym generation or want to compute definitions programmatically.
 
 **CommonJS export:**
+
 ```javascript
 module.exports = {
   api: "Application Programming Interface",
   bc: "Best Case",
-  e2e: "End-to-End"
+  e2e: "End-to-End",
 };
 ```
 
 **ES Module default export:**
+
 ```javascript
 export default {
   api: "Application Programming Interface",
-  bc: "Best Case"
+  bc: "Best Case",
 };
 ```
 
 **Named exports (merged):**
+
 ```javascript
 export const common = {
-  api: "Application Programming Interface"
+  api: "Application Programming Interface",
 };
 
 export const testing = {
-  e2e: "End-to-End"
+  e2e: "End-to-End",
 };
 ```
 
@@ -106,14 +111,15 @@ pnpm add ts-node
 ```
 
 **Example `acros.ts`:**
+
 ```typescript
 export default {
   api: "Application Programming Interface",
   bc: "Best Case",
   e2e: {
     acro: "End-to-End",
-    definition: "Testing methodology that validates the entire system"
-  }
+    definition: "Testing methodology that validates the entire system",
+  },
 };
 ```
 
@@ -122,6 +128,7 @@ export default {
 Organize acronyms across multiple files in an `acros/` folder. Files are merged alphabetically, with later files overriding earlier ones for duplicate keys.
 
 **Example structure:**
+
 ```
 acros/
   ├── common.json
@@ -139,11 +146,13 @@ AcroSense searches for configuration files in this order:
 2. **Document directory** - Searches up from the current file's directory to the workspace root
 
 The **closest configuration to your document** takes precedence. This allows you to:
+
 - Define project-wide acronyms at the root
 - Override with domain-specific acronyms in subdirectories
 - Use different acronyms for different parts of your codebase
 
 **Example:**
+
 ```
 project/
   ├── acros.json          (project-wide acronyms)
@@ -159,6 +168,7 @@ project/
 Acronyms can be defined in two formats:
 
 **Simple string:**
+
 ```json
 {
   "api": "Application Programming Interface"
@@ -166,6 +176,7 @@ Acronyms can be defined in two formats:
 ```
 
 **Object with optional fields:**
+
 ```json
 {
   "api": {
@@ -178,6 +189,7 @@ Acronyms can be defined in two formats:
 
 **Global default color:**
 Set `bg` or `backgroundColor` at the root level to apply a default highlight color to all acronyms:
+
 ```json
 {
   "bg": "rgba(255, 255, 0, 0.3)",
