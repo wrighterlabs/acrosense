@@ -3,6 +3,15 @@
   "displayName": "AcroSense",
   "description": "See through the jargon",
   "version": "0.0.1",
+  "publisher": "wrighterlabs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wrighterlabs/acrosense"
+  },
+  "author": {
+    "name": "Cameron Wright",
+    "url": "https://github.com/cam-eo"
+  },
   "engines": {
     "vscode": "^1.97.0"
   },
