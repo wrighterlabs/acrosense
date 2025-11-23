@@ -2,7 +2,7 @@
   "name": "acrosense",
   "displayName": "AcroSense",
   "description": "See through the jargon",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "wrighterlabs",
   "repository": {
     "type": "git",
